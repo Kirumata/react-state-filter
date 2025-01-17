@@ -11,7 +11,7 @@ function Toolbar(props: { filters: string[], selected: string, onSelectFilter: a
         buttons.push(newButton);
     }
     return (
-        <div>{buttons}</div>
+        <div className="grid gap-5 grid-cols-4 w-1/2">{buttons}</div>
     )
 }
 

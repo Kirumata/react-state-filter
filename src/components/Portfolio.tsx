@@ -8,7 +8,7 @@ import Toolbar from './Toolbar';
 export default class Portfolio extends Component {
     state: { filter: string } = { filter: "All" };
 
-
+    
     render() {
 
         let aProjectList: Project[] =
@@ -68,14 +68,16 @@ export default class Portfolio extends Component {
         let projects: Project[] = filterProjects(this.state.filter, aProjectList);
         return (
             <>
-                <div><Toolbar
-                    filters={["All", "Websites", "Flayers", "Business Cards"]}
-                    selected={this.state.filter}
-                    onSelectFilter={(filters: string) => {
-                        this.setState(() => ({ filter: filters }));
-                    }
-                    }></Toolbar></div>
-                <div><ProjectList projectList={projects}></ProjectList></div>
+                < div className='grid w-1/2 gap-y-5 justify-self-center'>
+                    <div><Toolbar
+                        filters={["All", "Websites", "Flayers", "Business Cards"]}
+                        selected={this.state.filter}
+                        onSelectFilter={(filters: string) => {
+                            this.setState(() => ({ filter: filters }));
+                        }
+                        }></Toolbar></div>
+                    <div><ProjectList projectList={projects}></ProjectList></div></div>
+
 
             </>
         )
